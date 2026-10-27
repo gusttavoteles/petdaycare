@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#b9e8fb" />
+  <meta name="description" content="Petday Care: creche, hotel, banho, tosa, estética, consultório veterinário e pet shop em Goiânia." />
+  <title>Petday Care — carinho que dá para sentir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #173c62;
+      --ink-deep: #102e4c;
+      --muted: #5d7184;
+      --baby: #bde9fb;
+      --sky: #eaf8ff;
+      --blue: #327bb2;
+      --teal: #31aaa7;
+      --yellow: #ffd866;
+      --coral: #ff8d7f;
+      --white: #fff;
+      --line: rgba(23,60,98,.12);
+      --shadow: 0 22px 60px rgba(31,93,133,.12);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: #f8fcff; font: 16px/1.55 "DM Sans", sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--teal); font-size: .76rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 27px; height: 3px; border-radius: 99px; background: var(--yellow); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2 { font-family: Fraunces, Georgia, serif; line-height: 1.04; letter-spacing: -.03em; }
+    h1 { font-size: clamp(3.3rem, 7vw, 6.45rem); margin: 18px 0 22px; max-width: 740px; }
+    h2 { font-size: clamp(2.5rem, 5vw, 4.4rem); margin: 16px 0 18px; }
+    h3 { font-size: 1.12rem; margin-bottom: 8px; }
+    .topbar { background: var(--ink-deep); color: #eaf7ff; font-size: .8rem; }
+    .topbar .container { display: flex; justify-content: space-between; gap: 20px; padding: 9px 0; }
+    .topbar span:last-child { color: #bde9fb; }
+
+    header { position: sticky; top: 0; z-index: 10; background: rgba(248,252,255,.84); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(23,60,98,.08); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 700; letter-spacing: -.03em; }
+    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50% 50% 48% 48%; color: var(--ink-deep); background: var(--yellow); box-shadow: inset 0 -5px 0 rgba(255,255,255,.28); font-size: 1.25rem; transform: rotate(-8deg); }
+    .brand-name { font-size: 1.05rem; }
+    .brand-name small { display: block; color: var(--muted); font-size: .67rem; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; }
+    nav ul { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; font-size: .9rem; color: #536d83; }
+    nav a:hover { color: var(--blue); }
+    .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; padding: 13px 21px; font-weight: 700; border: 1px solid transparent; transition: transform .2s, box-shadow .2s, background .2s; }
+    .button:hover, .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(32,102,151,.16); }
+    .button-primary, .nav-cta { background: var(--ink); color: #fff; }
+    .button-soft { background: var(--white); color: var(--ink); border-color: var(--line); }
+    .menu-button { display: none; border: 0; background: transparent; color: var(--ink); font-size: 1.5rem; }
+
+    .hero { position: relative; overflow: hidden; padding: 74px 0 58px; background: linear-gradient(135deg, #edfaff 0%, #c7edfc 62%, #b2e6f7 100%); }
+    .hero::before { content: ""; position: absolute; width: 480px; height: 480px; right: -170px; top: -190px; border: 1px solid rgba(255,255,255,.65); border-radius: 50%; box-shadow: 0 0 0 32px rgba(255,255,255,.16), 0 0 0 64px rgba(255,255,255,.11); }
+    .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 70px; }
+    .hero-copy p { max-width: 535px; color: #456279; font-size: 1.12rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 34px; }
+    .hero-note { display: flex; align-items: center; gap: 12px; font-size: .87rem; color: #4e677b; }
+    .avatar-stack { display: flex; }
+    .avatar-stack span { width: 31px; height: 31px; display: grid; place-items: center; margin-right: -8px; border: 3px solid var(--baby); border-radius: 50%; background: #fff; font-size: .93rem; }
+    .hero-art { position: relative; min-height: 510px; }
+    .hero-photo { position: absolute; inset: 42px 0 0 38px; overflow: hidden; border-radius: 44% 44% 24px 24px; box-shadow: 24px 24px 0 rgba(255,255,255,.45), var(--shadow); background: #8ccbdc url('https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=1000&q=85') center/cover; }
+    .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16,46,76,0) 55%, rgba(16,46,76,.26)); }
+    .floating-card { position: absolute; z-index: 1; display: grid; gap: 4px; padding: 16px 18px; border: 1px solid rgba(255,255,255,.7); border-radius: 18px; background: rgba(255,255,255,.9); box-shadow: 0 18px 42px rgba(22,70,100,.18); }
+    .floating-card strong { font-size: 1.08rem; }
+    .floating-card small { color: var(--muted); font-size: .76rem; }
+    .card-rating { left: -3px; top: 25px; }
+    .card-paw { right: -17px; bottom: 43px; max-width: 166px; }
+    .paw { color: var(--coral); font-size: 1.55rem; }
+
+    .stats { position: relative; z-index: 2; margin-top: -28px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); padding: 23px 28px; gap: 18px; border: 1px solid rgba(23,60,98,.08); border-radius: 22px; background: #fff; box-shadow: var(--shadow); }
+    .stat { display: flex; gap: 14px; align-items: center; padding: 8px 12px; border-right: 1px solid var(--line); }
+    .stat:last-child { border-right: 0; }
+    .stat-icon { width: 39px; height: 39px; flex: 0 0 39px; display: grid; place-items: center; border-radius: 13px; background: var(--sky); font-size: 1.2rem; }
+    .stat strong { display: block; font-size: 1.06rem; }
+    .stat span { display: block; color: var(--muted); font-size: .78rem; }
+
+    section { padding: 112px 0; }
+    .section-heading { max-width: 650px; }
+    .section-heading p { color: var(--muted); font-size: 1.05rem; }
+    .services { background: #fff; }
+    .services-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 38px; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .service { min-height: 215px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: #fbfdff; transition: transform .25s, box-shadow .25s, border-color .25s; }
+    .service:hover { transform: translateY(-6px); border-color: rgba(49,170,167,.25); box-shadow: 0 17px 35px rgba(43,117,155,.1); }
+    .service-top { display: flex; justify-content: space-between; align-items: start; }
+    .service-icon { width: 50px; height: 50px; display: grid; place-items: center; border-radius: 17px; background: var(--baby); font-size: 1.5rem; }
+    .service:nth-child(2) .service-icon, .service:nth-child(5) .service-icon { background: #ffe7a6; }
+    .service:nth-child(3) .service-icon, .service:nth-child(6) .service-icon { background: #d2f2e2; }
+    .service p { color: var(--muted); font-size: .88rem; margin-bottom: 0; }
+    .service-link { color: var(--blue); font-size: .78rem; font-weight: 700; }
+
+    .about { background: var(--sky); }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: center; }
+    .about-photo { position: relative; min-height: 490px; overflow: hidden; border-radius: 30px; background: #b4e6f3 url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=85') center/cover; box-shadow: 20px 20px 0 #fff; }
+    .about-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(44,171,170,.08), rgba(16,46,76,.22)); }
+    .about-sticker { position: absolute; z-index: 1; right: -18px; bottom: 30px; width: 150px; aspect-ratio: 1; display: grid; place-items: center; padding: 18px; text-align: center; border-radius: 50%; color: var(--ink); background: var(--yellow); font-family: Fraunces, Georgia, serif; font-size: 1.05rem; line-height: 1.1; transform: rotate(8deg); box-shadow: 0 11px 25px rgba(144,112,25,.16); }
+    .about-copy p { color: var(--muted); }
+    .check-list { display: grid; gap: 14px; margin: 28px 0 32px; padding: 0; list-style: none; }
+    .check-list li { display: flex; align-items: start; gap: 10px; }
+    .check-list li::before { content: "✓"; display: grid; place-items: center; width: 22px; height: 22px; flex: 0 0 22px; margin-top: 2px; border-radius: 50%; background: #d4f3e8; color: #248c79; font-weight: 800; font-size: .78rem; }
+    .check-list span { color: #36556e; }
+
+    .reviews { background: var(--ink-deep); color: #fff; }
+    .reviews .eyebrow { color: var(--baby); }
+    .reviews .section-heading p { color: #a8c0d1; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+    .review { display: flex; flex-direction: column; justify-content: space-between; min-height: 238px; padding: 25px; border: 1px solid rgba(189,233,251,.18); border-radius: 23px; background: rgba(255,255,255,.06); }
+    .stars { color: var(--yellow); letter-spacing: .13em; }
+    .review blockquote { margin: 18px 0 26px; color: #eef9ff; font-family: Fraunces, Georgia, serif; font-size: 1.27rem; line-height: 1.24; }
+    .review figcaption { color: #a8c0d1; font-size: .8rem; }
+
+    .visit { background: #fff; }
+    .visit-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; align-items: stretch; }
+    .visit-card { padding: 35px; border-radius: var(--radius); background: var(--sky); }
+    .visit-card p { color: var(--muted); }
+    .contact-items { display: grid; gap: 15px; margin: 28px 0; }
+    .contact-item { display: flex; gap: 13px; align-items: start; }
+    .contact-item b { display: block; margin-bottom: 2px; }
+    .contact-item span { color: var(--muted); font-size: .9rem; }
+    .contact-icon { width: 35px; height: 35px; display: grid; place-items: center; flex: 0 0 35px; border-radius: 12px; background: #fff; }
+    .map-card { position: relative; overflow: hidden; min-height: 430px; padding: 27px; border-radius: var(--radius); color: #fff; background: linear-gradient(145deg, rgba(16,46,76,.94), rgba(36,126,164,.86)), url('https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=1000&q=80') center/cover; }
+    .map-card::before { content: ""; position: absolute; inset: 0; opacity: .18; background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 24px 24px; }
+    .map-content { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+    .map-pin { width: 57px; height: 57px; display: grid; place-items: center; border-radius: 50% 50% 50% 9px; color: var(--ink); background: var(--yellow); font-size: 1.5rem; transform: rotate(-45deg); }
+    .map-pin span { transform: rotate(45deg); }
+    .map-card h3 { max-width: 260px; margin-top: 55px; font-size: 1.55rem; }
+    .map-card p { max-width: 300px; color: #d9eff9; }
+    .map-card .button { align-self: start; background: #fff; color: var(--ink); }
+
+    .faq { padding-top: 0; background: #fff; }
+    .faq-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 80px; }
+    .faq-list { display: grid; gap: 10px; }
+    details { padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; background: #fbfdff; }
+    summary { cursor: pointer; list-style: none; font-weight: 700; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; float: right; color: var(--teal); font-size: 1.3rem; line-height: 1; }
+    details[open] summary::after { content: "–"; }
+    details p { margin: 13px 25px 0 0; color: var(--muted); font-size: .9rem; }
+
+    footer { padding: 30px 0 90px; color: #7890a1; background: #f3faff; font-size: .82rem; }
+    .footer-grid { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-grid .brand { color: var(--ink); }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a:hover { color: var(--blue); }
+    .whatsapp { position: fixed; z-index: 12; right: 24px; bottom: 24px; display: inline-flex; align-items: center; gap: 9px; padding: 14px 18px; border-radius: 999px; color: #fff; background: #24b878; font-weight: 700; box-shadow: 0 14px 28px rgba(36,184,120,.28); }
+    .whatsapp:hover { transform: translateY(-3px); }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s, transform .7s; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .visit-grid, .faq-grid { grid-template-columns: 1fr; gap: 44px; }
+      .hero-art { min-height: 480px; max-width: 610px; width: 100%; margin: auto; }
+      .service-grid, .review-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-photo { min-height: 380px; max-width: 580px; }
+      .faq-grid { gap: 20px; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .topbar .container { font-size: .7rem; }
+      .topbar span:last-child { display: none; }
+      .nav { min-height: 68px; }
+      nav ul, .nav-cta { display: none; }
+      .menu-button { display: block; }
+      nav.open ul { position: absolute; left: 14px; right: 14px; top: 69px; display: grid; gap: 0; padding: 10px; border: 1px solid var(--line); border-radius: 17px; background: #fff; box-shadow: var(--shadow); }
+      nav.open li a { display: block; padding: 12px; }
+      .hero { padding: 55px 0 30px; }
+      h1 { font-size: clamp(3rem, 15vw, 4.5rem); }
+      .hero-copy p { font-size: 1rem; }
+      .hero-art { min-height: 370px; }
+      .hero-photo { inset: 33px 11px 0 11px; border-radius: 32% 32% 19px 19px; box-shadow: 10px 12px 0 rgba(255,255,255,.45), var(--shadow); }
+      .floating-card { padding: 11px 13px; }
+      .card-rating { left: 0; top: 5px; }
+      .card-paw { right: 0; bottom: 20px; max-width: 135px; }
+      .stats { margin-top: 15px; }
+      .stats-grid { grid-template-columns: 1fr; padding: 13px; }
+      .stat { border-right: 0; border-bottom: 1px solid var(--line); padding: 12px 7px; }
+      .stat:last-child { border-bottom: 0; }
+      section { padding: 76px 0; }
+      .services-head { display: block; margin-bottom: 24px; }
+      .service-grid, .review-grid { grid-template-columns: 1fr; }
+      .service { min-height: 190px; }
+      .about-photo { min-height: 320px; box-shadow: 10px 10px 0 #fff; }
+      .about-sticker { right: 4px; bottom: 17px; width: 118px; font-size: .88rem; }
+      .visit-card, .map-card { padding: 25px; }
+      .map-card { min-height: 360px; }
+      .footer-grid { display: grid; justify-content: stretch; }
+      .footer-links { flex-wrap: wrap; }
+      .whatsapp { right: 14px; bottom: 14px; padding: 13px 15px; font-size: .85rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container"><span>🐾 Um lugar para o seu pet se sentir em casa</span><span>Vila Rosa · Goiânia, GO</span></div></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Petday Care — início"><span class="brand-mark">🐾</span><span class="brand-name">Petday Care<small>carinho que dá para sentir</small></span></a>
+      <nav id="site-nav"><ul><li><a href="#servicos">Serviços</a></li><li><a href="#jeito">Nosso jeito</a></li><li><a href="#avaliacoes">Avaliações</a></li><li><a href="#visite">Onde estamos</a></li></ul></nav>
+      <a class="nav-cta" href="https://wa.me/5562982231323" target="_blank" rel="noreferrer">Falar no WhatsApp <span>↗</span></a>
+      <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Petday Care · Goiânia</span>
+          <h1>Seu pet feliz.<br><em>Você tranquilo.</em></h1>
+          <p>Um espaço completo para brincar, descansar, se cuidar e receber muito carinho — com o cuidado que cada pet merece.</p>
+          <div class="hero-actions"><a class="button button-primary" href="https://wa.me/5562982231323" target="_blank" rel="noreferrer">Quero conhecer <span>↗</span></a><a class="button button-soft" href="#servicos">Ver nossos serviços <span>↓</span></a></div>
+          <div class="hero-note"><div class="avatar-stack"><span>🐶</span><span>🐱</span><span>🐾</span></div><span>Para pets e para quem ama cuidar deles.</span></div>
+        </div>
+        <div class="hero-art reveal"><div class="hero-photo" role="img" aria-label="Cachorro feliz em um espaço ao ar livre"></div><div class="floating-card card-rating"><strong>4,9 <span class="stars">★★★★★</span></strong><small>42 avaliações no Google</small></div><div class="floating-card card-paw"><span class="paw">♡</span><strong>Mais carinho<br>em cada detalhe</strong><small>Creche · Hotel · Banho</small></div></div>
+      </div>
+    </section>
+
+    <div class="stats"><div class="container stats-grid reveal"><div class="stat"><span class="stat-icon">★</span><div><strong>4,9 no Google</strong><span>42 avaliações públicas</span></div></div><div class="stat"><span class="stat-icon">⌂</span><div><strong>Vila Rosa, Goiânia</strong><span>R. Dr. Joaquim Taveira</span></div></div><div class="stat"><span class="stat-icon">◷</span><div><strong>Aberto de terça a sábado</strong><span>08h–18h · sábado até 12h</span></div></div></div></div>
+
+    <section class="services" id="servicos">
+      <div class="container"><div class="services-head"><div class="section-heading reveal"><span class="eyebrow">Tudo em um só lugar</span><h2>Um dia gostoso para cada tipo de pet.</h2><p>Da rotina de cuidados à hospedagem, a Petday Care reúne serviços para deixar a vida dos pets — e dos tutores — mais leve.</p></div><a class="button button-soft reveal" href="https://wa.me/5562982231323" target="_blank" rel="noreferrer">Consultar disponibilidade ↗</a></div>
+        <div class="service-grid">
+          <article class="service reveal"><div class="service-top"><span class="service-icon">💉</span><span class="service-link">Cuidado</span></div><div><h3>Consultório veterinário</h3><p>Atenção e orientação para a saúde do seu companheiro.</p></div></article>
+          <article class="service reveal"><div class="service-top"><span class="service-icon">🫧</span><span class="service-link">Bem-estar</span></div><div><h3>Banho, tosa e estética</h3><p>Banho aquecido, tosa e estética para sair limpinho e feliz.</p></div></article>
+          <article class="service reveal"><div class="service-top"><span class="service-icon">🐕</span><span class="service-link">Diversão</span></div><div><h3>Creche</h3><p>Um espaço para brincar, interagir e gastar energia com alegria.</p></div></article>
+          <article class="service reveal"><div class="service-top"><span class="service-icon">🛏️</span><span class="service-link">Hospedagem</span></div><div><h3>Hotel para pets</h3><p>Quando você viaja, seu pet também merece uma estadia especial.</p></div></article>
+          <article class="service reveal"><div class="service-top"><span class="service-icon">🦴</span><span class="service-link">Pet shop</span></div><div><h3>Ração, petiscos e acessórios</h3><p>Itens para o dia a dia, escolhidos para cuidar bem de cada fase.</p></div></article>
+          <article class="service reveal"><div class="service-top"><span class="service-icon">🚘</span><span class="service-link">Comodidade</span></div><div><h3>Entrega em domicílio</h3><p>Também fazemos entregas para deixar tudo mais prático para você.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="jeito"><div class="container about-grid"><div class="about-photo reveal" role="img" aria-label="Pessoa cuidando de um cachorro"><div class="about-sticker">Cuidado que vira confiança ✦</div></div><div class="about-copy reveal"><span class="eyebrow">O nosso jeito de cuidar</span><h2>Porque ser bem cuidado muda tudo.</h2><p>Na Petday Care, cada visita é pensada para que o pet se sinta acolhido e o tutor possa seguir o dia com o coração tranquilo.</p><ul class="check-list"><li><span>Rotina de cuidado com carinho e atenção.</span></li><li><span>Um espaço para brincar, socializar e descansar.</span></li><li><span>Serviços que acompanham as necessidades do seu pet.</span></li><li><span>Profissionais atenciosos, segundo quem já vive essa experiência.</span></li></ul><a class="button button-primary" href="https://www.instagram.com/petdaycare.go/" target="_blank" rel="noreferrer">Conhecer no Instagram ↗</a></div></div></section>
+
+    <section class="reviews" id="avaliacoes"><div class="container"><div class="section-heading reveal"><span class="eyebrow">Quem conhece, recomenda</span><h2>Cuidado percebido por quem deixa o pet aqui.</h2><p>A Petday Care tem nota 4,9 no Google, com 42 avaliações. Alguns comentários públicos que resumem esse carinho:</p></div><div class="review-grid"><figure class="review reveal"><div><div class="stars">★★★★★</div><blockquote>“A creche é maravilhosa! Nosso pet é sempre muito bem cuidado, e percebemos o quanto ele fica feliz ao chegar lá.”</blockquote></div><figcaption>— Avaliação pública no Google</figcaption></figure><figure class="review reveal"><div><div class="stars">★★★★★</div><blockquote>“Lugar com profissionais atenciosos e acolhedores.”</blockquote></div><figcaption>— Avaliação pública no Google</figcaption></figure><figure class="review reveal"><div><div class="stars">★★★★★</div><blockquote>“A cada banho, um novo penteado. Ela vem limpinha, cheirosa e com os cabelos bem macios.”</blockquote></div><figcaption>— Avaliação pública no Google</figcaption></figure></div></div></section>
+
+    <section class="visit" id="visite"><div class="container visit-grid"><div class="visit-card reveal"><span class="eyebrow">Venha conhecer</span><h2>O próximo passeio pode ser até a Petday.</h2><p>Estamos na Vila Rosa, em Goiânia. Fale com a equipe para confirmar o serviço, disponibilidade e os detalhes para o seu pet.</p><div class="contact-items"><div class="contact-item"><span class="contact-icon">⌖</span><div><b>Endereço</b><span>R. Dr. Joaquim Taveira — Vila Rosa<br>Goiânia — GO, 74345-170</span></div></div><div class="contact-item"><span class="contact-icon">◷</span><div><b>Horários</b><span>Terça a sexta: 08h às 18h<br>Sábado: 08h às 12h · Domingo: fechado</span></div></div><div class="contact-item"><span class="contact-icon">✆</span><div><b>Telefone e WhatsApp</b><span>(62) 98223-1323</span></div></div></div><a class="button button-primary" href="https://wa.me/5562982231323" target="_blank" rel="noreferrer">Falar com a equipe ↗</a></div><div class="map-card reveal"><div class="map-content"><div class="map-pin"><span>⌖</span></div><div><h3>Petday Care fica pertinho de você.</h3><p>Retirada na loja e entrega disponíveis, conforme informações do perfil do Google.</p><a class="button" href="https://maps.app.goo.gl/EqcSwsrgfdznhH6K6" target="_blank" rel="noreferrer">Abrir no Google Maps ↗</a></div></div></div></div></section>
+
+    <section class="faq"><div class="container faq-grid"><div class="section-heading reveal"><span class="eyebrow">Ficou com alguma dúvida?</span><h2>Vamos deixar tudo mais simples.</h2><p>Para valores, disponibilidade e orientações específicas, a equipe atende pelo WhatsApp.</p></div><div class="faq-list reveal"><details><summary>Quais serviços a Petday Care oferece?</summary><p>Consultório veterinário, banho aquecido, tosa e estética, creche, hotel, ração, petiscos, acessórios e entregas em domicílio.</p></details><details><summary>Qual é o horário de funcionamento?</summary><p>De terça a sexta, das 08h às 18h. Aos sábados, das 08h às 12h. Aos domingos, fechado. Em feriados, confirme antes pelo WhatsApp.</p></details><details><summary>Como faço para agendar?</summary><p>Fale com a equipe pelo WhatsApp (62) 98223-1323 para consultar a disponibilidade e combinar o melhor atendimento para o seu pet.</p></details><details><summary>Onde a Petday Care fica?</summary><p>Na R. Dr. Joaquim Taveira, Vila Rosa, Goiânia — GO, 74345-170. Você pode abrir a localização no Google Maps pelo botão desta página.</p></details></div></div></section>
+  </main>
+
+  <footer><div class="container footer-grid"><a class="brand" href="#inicio"><span class="brand-mark">🐾</span><span class="brand-name">Petday Care<small>carinho que dá para sentir</small></span></a><div class="footer-links"><a href="https://www.instagram.com/petdaycare.go/" target="_blank" rel="noreferrer">Instagram</a><a href="https://maps.app.goo.gl/EqcSwsrgfdznhH6K6" target="_blank" rel="noreferrer">Google Maps</a><a href="https://wa.me/5562982231323" target="_blank" rel="noreferrer">WhatsApp</a></div><span>© 2026 Petday Care</span></div></footer>
+  <a class="whatsapp" href="https://wa.me/5562982231323" target="_blank" rel="noreferrer" aria-label="Falar com a Petday Care pelo WhatsApp">☏ <span>Falar no WhatsApp</span></a>
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const siteNav = document.querySelector('#site-nav');
+    menuButton.addEventListener('click', () => { const open = siteNav.classList.toggle('open'); menuButton.setAttribute('aria-expanded', open); menuButton.textContent = open ? '×' : '☰'; });
+    document.querySelectorAll('#site-nav a').forEach(link => link.addEventListener('click', () => { siteNav.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.textContent = '☰'; }));
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }), { threshold: .1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
+
